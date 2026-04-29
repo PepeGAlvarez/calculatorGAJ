@@ -1,9 +1,10 @@
-package com.dam.calculatorGAJ;
+package com.dam;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.springframework.beans.factory.annotation.Autowired; // Importación necesaria
 import org.springframework.boot.test.context.SpringBootTest;
+import com.dam.calculatorGAJ.Calculator;
 
 @SpringBootTest // Se mantiene la anotación
 class CalculatorGAJApplicationTests { // Se cambia el nombre de la clase para que coincida con el nombre del archivo
