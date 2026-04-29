@@ -32,3 +32,14 @@ jobs:
 
       - name: Pruebas unitarias
         run: ./gradlew test --no-daemon
+
+      - name: Cobertura de codigo
+        run: ./gradlew jacocoTestReport --no-daemon
+      
+      - name: Se sube el informe JaCoCo
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report
+          path: build/reports/jacoco/test/html
+      - name: Fuerza comprobación de cobertura de código
+        run: ./gradlew jacocoTestCoverageVerification --no-daemon
