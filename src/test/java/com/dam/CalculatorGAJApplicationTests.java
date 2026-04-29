@@ -1,15 +1,16 @@
 package com.dam;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.springframework.beans.factory.annotation.Autowired; // Importación necesaria
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import com.dam.calculatorGAJ.Calculator;
+import com.dam.calculatorGAJ.CalculatorGAJApplication;
 
-@SpringBootTest // Se mantiene la anotación
-class CalculatorGAJApplicationTests { // Se cambia el nombre de la clase para que coincida con el nombre del archivo
+@SpringBootTest(classes = CalculatorGAJApplication.class) // Le indicamos a Spring Boot dónde está la app principal
+class CalculatorGAJApplicationTests {
 
-    @Autowired // Esto permite que Spring cargue la clase Calculator automáticamente
+    @Autowired // 3. Esto "conecta" el test con tu clase Calculator
     private Calculator calculator;
 
     @Test
@@ -17,7 +18,7 @@ class CalculatorGAJApplicationTests { // Se cambia el nombre de la clase para qu
     }
 
     @Test
-    public void testSum() {
+    void testSum() {
         assertEquals(5, calculator.sum(3, 2));
     }
 }

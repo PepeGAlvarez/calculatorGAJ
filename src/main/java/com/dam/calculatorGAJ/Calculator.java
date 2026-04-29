@@ -1,4 +1,5 @@
 package com.dam.calculatorGAJ;
+
 import org.springframework.stereotype.Service;
 
 @Service
